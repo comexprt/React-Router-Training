@@ -1,6 +1,6 @@
 import React, {Component } from 'react';
 import './App.css';
-import {BrowserRouter as Router, Link, NavLink, Redirect} from 'react-router-dom';
+import {BrowserRouter as Router, Link, NavLink, Redirect, Prompt} from 'react-router-dom';
 import Route from 'react-router-dom/Route'
 
 const User = (params) => {
@@ -45,6 +45,13 @@ class App extends Component{
                      }> User Devian</NavLink>
                   </li>
               </ul>
+
+              <Prompt 
+                when={!this.state.loggedIn}
+                message = {(location) => {
+                  return location.pathname.startsWith('/user') ? 'Are you sure ?' : true
+                }}
+              />
 
               <input type="button"  value={this.state.loggedIn ? 'log out' : 'log in'} onClick={this.loginHandle.bind(this)} />
 
