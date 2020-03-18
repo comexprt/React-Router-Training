@@ -3,8 +3,8 @@ import './App.css';
 import {BrowserRouter as Router} from 'react-router-dom';
 import Route from 'react-router-dom/Route'
 
-const User = () => {
-  return (<h1>Welcome User</h1>)
+const User = ({match}) => {
+return (<h1>Welcome User {match.params.username}</h1>)
 }
 
 class App extends Component{
@@ -29,7 +29,7 @@ class App extends Component{
                 }
               } />
 
-              <Route path="/user" exact strict component={User} />
+              <Route path="/user/:username" exact strict component={User} />
 
 
           </div>
