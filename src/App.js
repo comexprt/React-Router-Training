@@ -30,7 +30,7 @@ class App extends Component{
                      }> Home</NavLink>
                   </li>
                   <li>
-                     <NavLink to="/about" exact activeStyle={
+                     <NavLink to="/abouts" exact activeStyle={
                        {color:'red'}
                      }> About</NavLink>
                   </li>
